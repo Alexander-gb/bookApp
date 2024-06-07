@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-public class BookCotroller {
+public class BookController {
     @Autowired
     private BookRepo bookRepo;
 
@@ -21,7 +21,7 @@ public class BookCotroller {
     public ResponseEntity<List<Book>> getAllBooks() {
         try {
             List<Book> bookList = new ArrayList<>();
-            bookList.addAll(bookRepo.figndAll());
+            bookList.addAll(bookRepo.findAll());
 
             if (bookList.isEmpty()) {
                 return new ResponseEntity<>(bookList, HttpStatus.NO_CONTENT);
